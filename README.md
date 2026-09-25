@@ -75,6 +75,7 @@ npx @modelcontextprotocol/inspector python server.py
 | | |
 |---|---|
 | ![](docs/ekran_goruntuleri/02_inspector_arac_formu.png)<br/>`search_postings` aracının Inspector'daki şeması | ![](docs/ekran_goruntuleri/03_inspector_basarili_cagri.png)<br/>`get_posting` başarılı çağrı |
+| ![](docs/ekran_goruntuleri/06_colab_v1_bolge_kisiti.jpg)<br/>Colab · 1. sürüm: yalnız arama araçlarıyla bölge kısıtı gözden kaçıyor | ![](docs/ekran_goruntuleri/07_colab_v2_check_fit.jpg)<br/>Colab · 2. sürüm: `check_fit` ile doğru karar |
 | ![](docs/ekran_goruntuleri/01_ilan_standartlastirma.png)<br/>İlanların ortak şablona dönüşümü | ![](docs/ekran_goruntuleri/05_inspector_toolerror.png)<br/>Olmayan ilan: `ToolError` |
 
 ## Lisans
