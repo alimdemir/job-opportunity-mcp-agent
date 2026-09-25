@@ -21,7 +21,7 @@ def anyio_backend():
 async def test_tools_are_listed():
     async with create_connected_server_and_client_session(mcp._mcp_server) as client:
         names = {t.name for t in (await client.list_tools()).tools}
-    assert names == {"search_postings", "get_posting"}
+    assert names == {"search_postings", "get_posting", "check_fit"}
 
 
 async def test_search_filters_remote():
@@ -51,7 +51,8 @@ async def test_agent_loop_with_scripted_model():
     ])
 
     def fake_model(messages, tools):
-        assert {t["function"]["name"] for t in tools} == {"search_postings", "get_posting"}
+        assert {t["function"]["name"] for t in tools} == {"search_postings", "get_posting", "check_fit"}
+        assert "check_fit" in messages[0]["content"]  # ön kontrol kuralı sistem istemine eklendi
         return next(script)
 
     async with create_connected_server_and_client_session(mcp._mcp_server) as client:
@@ -72,3 +73,26 @@ async def test_agent_stops_at_step_limit():
         result = await run_agent("döngü", client, looping_model, max_steps=2)
     assert result.answer is None
     assert result.steps[-1].kind == "error"
+
+
+async def test_check_fit_flags_region_restricted_remote_job():
+    async with create_connected_server_and_client_session(mcp._mcp_server) as client:
+        res = await client.call_tool("check_fit", {"posting_id": 49156689, "skills": ["Python", "Docker", "AWS"]})
+    fit = res.structuredContent
+    assert fit["company"] == "Snout" and fit["region_restricted"] and not fit["eligible"]
+    assert fit["matched_skills"] == ["AWS", "Python"]
+
+
+async def test_allowed_tools_hides_tools_and_rejects_unknown_calls():
+    seen_tools = []
+
+    def model(messages, tools):
+        seen_tools.append({t["function"]["name"] for t in tools})
+        if len(messages) == 2:
+            return '<tool_call>{"name": "check_fit", "arguments": {"posting_id": 1, "skills": []}}</tool_call>'
+        return "tamam"
+
+    async with create_connected_server_and_client_session(mcp._mcp_server) as client:
+        result = await run_agent("x", client, model, allowed_tools={"search_postings", "get_posting"})
+    assert seen_tools[0] == {"search_postings", "get_posting"}
+    assert result.steps[1].kind == "error" and "araç yok" in result.steps[1].content

@@ -5,7 +5,7 @@ import sys
 from mcp.server.fastmcp import FastMCP
 from mcp.server.fastmcp.exceptions import ToolError
 
-from jobs import JobPosting, load_posts, normalize
+from jobs import FitReport, JobPosting, assess_fit, load_posts, normalize
 
 # stdio taşımasında stdout protokole ayrılmış; loglar stderr'e yazılıyor
 logging.basicConfig(stream=sys.stderr, level=logging.INFO, format="%(levelname)s %(message)s")
@@ -38,6 +38,20 @@ def get_posting(posting_id: int) -> JobPosting:
     for post in load_posts():
         if post["id"] == posting_id:
             return normalize(post)
+    raise ToolError(f"{posting_id} numaralı ilan bulunamadı")
+
+
+@mcp.tool()
+def check_fit(posting_id: int, skills: list[str], country: str = "Türkiye", wants_remote: bool = True) -> FitReport:
+    """İlanı kullanıcı profiline göre kural tabanlı ön kontrolden geçirir.
+
+    Uzaktan ilanlardaki bölge kısıtını (ör. 'Remote US'), çalışma biçimini ve ilanda
+    açıkça geçen becerilerle eşleşmeyi raporlar. Bir ilanı önermeden önce çağırın.
+    """
+    log.info("ön kontrol: %s (%s)", posting_id, country)
+    for post in load_posts():
+        if post["id"] == posting_id:
+            return assess_fit(normalize(post), skills, country, wants_remote)
     raise ToolError(f"{posting_id} numaralı ilan bulunamadı")
 
 

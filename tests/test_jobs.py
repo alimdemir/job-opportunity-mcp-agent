@@ -3,7 +3,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from jobs import JobPosting, load_posts, normalize  # noqa: E402
+from jobs import JobPosting, assess_fit, load_posts, normalize  # noqa: E402
 
 
 def by_company(name):
@@ -35,3 +35,16 @@ def test_snout_posting_fields():
 def test_dataset_has_no_email_addresses():
     import re
     assert not any(re.search(r"[\w.+-]+@[\w-]+\.\w+", p["text"]) for p in load_posts())
+
+
+def test_assess_fit_region_and_skills():
+    fit = assess_fit(by_company("Snout"), ["python", "Docker", "AWS"], country="Türkiye")
+    assert fit.region_restricted and not fit.eligible
+    assert fit.matched_skills == ["AWS", "Python"]   # büyük/küçük harf duyarsız, ilandaki yazımla
+
+
+def test_assess_fit_worldwide_remote_is_eligible():
+    jobs = [normalize(p) for p in load_posts()]
+    unrestricted = [j for j in jobs if j.work_mode == "remote" and j.location and "worldwide" in j.location.lower()]
+    for job in unrestricted:
+        assert assess_fit(job, ["Python"]).eligible

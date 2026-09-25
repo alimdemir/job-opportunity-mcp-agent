@@ -22,6 +22,10 @@ SYSTEM_PROMPT = (
     "ilanda yazmayan bir bilgiyi tahmin etme, 'belirtilmemiş' de. "
     "Yanıtı Türkçe ve kısa ver, her ilanı id numarasıyla an."
 )
+FIT_RULE = (
+    " Bir ilanı kullanıcıya önermeden önce mutlaka check_fit aracını kullanıcının becerileri ve "
+    "ülkesiyle çağır; eligible=false ise ilanı uygun gösterme ve nedenini açıkça söyle."
+)
 
 
 @dataclass
@@ -64,13 +68,19 @@ def _result_text(result) -> str:
 
 
 async def run_agent(question: str, session, generate: Callable[[list[dict], list[dict]], str | Awaitable[str]],
-                    max_steps: int = 4) -> AgentResult:
+                    max_steps: int = 4, allowed_tools: set[str] | None = None) -> AgentResult:
     """Soru -> (araç çağrısı -> araç sonucu)* -> yanıt döngüsü.
 
     `max_steps` sınırı, modelin aynı aramayı tekrar tekrar üretip gecikmeyi büyütmesini önler.
+    `allowed_tools` verilirse modele yalnız bu araçlar gösterilir (sürüm karşılaştırması için).
     """
-    tools = mcp_tools_to_openai((await session.list_tools()).tools)
-    messages = [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": question}]
+    listed = (await session.list_tools()).tools
+    if allowed_tools is not None:
+        listed = [t for t in listed if t.name in allowed_tools]
+    tools = mcp_tools_to_openai(listed)
+    names = {t["function"]["name"] for t in tools}
+    system = SYSTEM_PROMPT + (FIT_RULE if "check_fit" in names else "")
+    messages = [{"role": "system", "content": system}, {"role": "user", "content": question}]
     result = AgentResult(answer=None)
     seen: set[str] = set()
 
@@ -87,7 +97,10 @@ async def run_agent(question: str, session, generate: Callable[[list[dict], list
         for call in calls:
             key = json.dumps(call, sort_keys=True, ensure_ascii=False)
             result.steps.append(Step("tool_call", call["arguments"], call["name"]))
-            if key in seen:  # aynı çağrı ikinci kez: yeni bilgi getirmez
+            if call["name"] not in names:
+                text = f"{call['name']} adlı bir araç yok."
+                result.steps.append(Step("error", text, call["name"]))
+            elif key in seen:  # aynı çağrı ikinci kez: yeni bilgi getirmez
                 text = "Bu çağrı zaten yapıldı; mevcut sonuçlarla yanıt ver."
             else:
                 seen.add(key)

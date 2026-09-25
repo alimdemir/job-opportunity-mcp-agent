@@ -1,5 +1,6 @@
 # İş Fırsatı Ajanı · MCP Sunucusu + Qwen3 Araç Çağırma
 
+[![CI](https://github.com/alimdemir/job-opportunity-mcp-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/alimdemir/job-opportunity-mcp-agent/actions/workflows/ci.yml)
 [![Colab'da aç](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/alimdemir/job-opportunity-mcp-agent/blob/main/notebooks/03_mcp_ajan_qwen_colab.ipynb)
 ![Python](https://img.shields.io/badge/Python-3.11%20|%203.12-3776AB?logo=python&logoColor=white)
 ![MCP](https://img.shields.io/badge/MCP-FastMCP-black)
@@ -21,6 +22,7 @@ flowchart LR
 2. **MCP sunucusu** (`server.py`):
    - `search_postings(keyword, remote_only=False, limit=5)`: anahtar kelimeyle ilan arar
    - `get_posting(posting_id)`: tek ilanı şablonda döndürür, ilan yoksa `ToolError` verir (boş sonuç "uygun ilan yok" diye yorumlanmasın diye)
+   - `check_fit(posting_id, skills, country, wants_remote)`: kural tabanlı ön kontrol. Bölge kısıtını (`Remote US` gibi), çalışma biçimini ve ilanda açıkça geçen becerilerle eşleşmeyi `FitReport` olarak döndürür
    - `hn://threads/2026-08` kaynağı: kullanılan başlığın bilgisi
    - Loglar stdout'a değil stderr'e yazılır, çünkü stdio taşımasında stdout protokole ayrılmış.
 3. **Ajan döngüsü** (`agent.py`): MCP araç listesi, modele fonksiyon tanımı olarak verilir. Model `<tool_call>` ürettikçe araç çağrılır ve sonuç `role=tool` mesajıyla geri beslenir. Aynı çağrı tekrarlanırsa sunucuya gitmez; en fazla `max_steps` adım çalışır.
@@ -30,7 +32,7 @@ flowchart LR
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements-dev.txt
-pytest -v                                   # 10 test
+pytest -v                                   # 14 test
 ```
 
 ### MCP Inspector ile deneme
@@ -55,12 +57,12 @@ npx @modelcontextprotocol/inspector python server.py
 |---|---|---|
 | [`01_ilan_standartlastirma`](notebooks/01_ilan_standartlastirma.ipynb) | CPU | 10 ilanın şablona dönüşümü, boş bırakılan alanların sayımı |
 | [`02_profil_eslestirme`](notebooks/02_profil_eslestirme.ipynb) | CPU | Örnek profil ile ön kontrol: eşleşen beceri, yalnızca öğrenme hedefi, bölge kısıtı |
-| [`03_mcp_ajan_qwen_colab`](notebooks/03_mcp_ajan_qwen_colab.ipynb) | Colab T4 | MCP istemcisi + Qwen3-4B-Instruct-2507 ile uçtan uca ajan, hata senaryosu |
+| [`03_mcp_ajan_qwen_colab`](notebooks/03_mcp_ajan_qwen_colab.ipynb) | Colab T4 | MCP istemcisi + Qwen3-4B-Instruct-2507: yalnız arama araçlarıyla ve `check_fit` ile iki sürümün karşılaştırması, hata senaryosu |
 
 ## Öğrendiklerim / tasarım kararları
 
 - **Eksik bilgi ≠ olumsuz bilgi.** Ücretin yazmaması düşük olduğu anlamına gelmez. 10 ilanın 9'unda ücret, 5'inde çalışma türü yok; bu alanlar boş bırakıldı.
-- **"Remote" her zaman uzaktan değil.** `Remote (USA)` gibi ifadeler bölge kısıtı taşıyor; ön kontrolde ayrı bir not olarak gösteriliyor.
+- **"Remote" her zaman uzaktan değil.** `Remote (USA)` gibi ifadeler bölge kısıtı taşıyor. Colab denemesinde Qwen3-4B yalnız arama araçlarıyla çalışırken *Remote US or Ontario, Canada* ilanını Türkiye'den çalışan kullanıcıya "uygun" dedi. Bu kararı modele bırakmak yerine `check_fit` aracını ekledim; sistem istemi öneriden önce bu aracın çağrılmasını istiyor.
 - **Öğrenme hedefi deneyim sayılmaz.** Profildeki "öğrenmek istediği" teknolojiler eşleşen beceri olarak sayılmıyor.
 - **Araç açıklaması, modelin arayüzü.** FastMCP şemayı docstring ve tür ipuçlarından üretiyor; parametre adları ve açıklamalar Inspector'da modelin gördüğü biçimde kontrol edildi.
 

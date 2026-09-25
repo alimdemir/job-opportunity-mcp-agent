@@ -28,6 +28,49 @@ class JobPosting(BaseModel):
     source_url: str
 
 
+REGION_LIMITS = re.compile(
+    r"\b(US|USA|U\.S\.|United States|Canada|Ontario|UK|United Kingdom|EU|Europe|EMEA|North America|Americas)\b")
+
+
+class FitReport(BaseModel):
+    id: int
+    company: str
+    location: Optional[str] = None
+    work_mode: Optional[str] = None
+    matched_skills: list[str] = Field(default_factory=list)
+    region_restricted: bool
+    eligible: bool
+    reasons: list[str] = Field(default_factory=list)
+    source_url: str
+
+
+def assess_fit(job: "JobPosting", skills: list[str], country: str = "Türkiye",
+               wants_remote: bool = True) -> FitReport:
+    """Kural tabanlı ön kontrol: uygunluk kararı değil, kararın dayanacağı gerçekler.
+
+    - Uzaktan ilanlarda konum alanı bir bölge adı içeriyorsa ve kullanıcının ülkesi
+      geçmiyorsa ilan bölge kısıtlı sayılır (ör. "Remote US or Ontario, Canada").
+    - Beceri eşleşmesi yalnız ilanda açıkça geçen teknolojiler üzerinden yapılır.
+    """
+    stack = {t.lower(): t for t in job.tech_stack}
+    matched = sorted(stack[s.lower()] for s in skills if s.lower() in stack)
+    reasons = []
+    region_restricted = bool(job.location and REGION_LIMITS.search(job.location)
+                             and country.lower() not in job.location.lower())
+    if region_restricted:
+        reasons.append(f"bölge kısıtı: '{job.location}' ({country} kapsam dışında)")
+    if wants_remote and job.work_mode not in (None, "remote"):
+        reasons.append(f"çalışma biçimi {job.work_mode}, uzaktan değil")
+    if job.work_mode is None:
+        reasons.append("çalışma biçimi ilanda belirtilmemiş")
+    if not job.tech_stack:
+        reasons.append("ilanda teknoloji bilgisi yok")
+    eligible = not region_restricted and not (wants_remote and job.work_mode not in (None, "remote"))
+    return FitReport(id=job.id, company=job.company, location=job.location, work_mode=job.work_mode,
+                     matched_skills=matched, region_restricted=region_restricted, eligible=eligible,
+                     reasons=reasons, source_url=job.source_url)
+
+
 def load_posts() -> list[dict]:
     return json.loads(DATA.read_text(encoding="utf-8"))["posts"]
 
