@@ -57,12 +57,12 @@ npx @modelcontextprotocol/inspector python server.py
 |---|---|---|
 | [`01_ilan_standartlastirma`](notebooks/01_ilan_standartlastirma.ipynb) | CPU | 10 ilanın şablona dönüşümü, boş bırakılan alanların sayımı |
 | [`02_profil_eslestirme`](notebooks/02_profil_eslestirme.ipynb) | CPU | Örnek profil ile ön kontrol: eşleşen beceri, yalnızca öğrenme hedefi, bölge kısıtı |
-| [`03_mcp_ajan_qwen_colab`](notebooks/03_mcp_ajan_qwen_colab.ipynb) | Colab T4 | MCP istemcisi + Qwen3-4B-Instruct-2507: yalnız arama araçlarıyla ve `check_fit` ile iki sürümün karşılaştırması, hata senaryosu |
+| [`03_mcp_ajan_qwen_colab`](notebooks/03_mcp_ajan_qwen_colab.ipynb) | Colab A100 | MCP istemcisi + Qwen3-4B-Instruct-2507: yalnız arama araçlarıyla ve `check_fit` ile iki sürümün karşılaştırması, hata senaryosu |
 
 ## Öğrendiklerim / tasarım kararları
 
 - **Eksik bilgi ≠ olumsuz bilgi.** Ücretin yazmaması düşük olduğu anlamına gelmez. 10 ilanın 9'unda ücret, 5'inde çalışma türü yok; bu alanlar boş bırakıldı.
-- **"Remote" her zaman uzaktan değil.** `Remote (USA)` gibi ifadeler bölge kısıtı taşıyor. Colab denemesinde Qwen3-4B yalnız arama araçlarıyla çalışırken *Remote US or Ontario, Canada* ilanını Türkiye'den çalışan kullanıcıya "uygun" dedi. Bu kararı modele bırakmak yerine `check_fit` aracını ekledim; sistem istemi öneriden önce bu aracın çağrılmasını istiyor.
+- **"Remote" her zaman uzaktan değil.** `Remote (USA)` gibi ifadeler bölge kısıtı taşıyor. Colab denemesinde (A100) Qwen3-4B yalnız arama araçlarıyla çalışırken *Remote US or Ontario, Canada* ilanını Türkiye'den çalışan kullanıcıya "uygun" dedi (9.9 sn). `check_fit` eklenen ikinci sürümde model aracı çağırıp ilanın bölge kısıtı yüzünden uygun olmadığını söyledi (8.3 sn). Bu kararı modele bırakmak yerine `check_fit` aracını ekledim; sistem istemi öneriden önce bu aracın çağrılmasını istiyor.
 - **Öğrenme hedefi deneyim sayılmaz.** Profildeki "öğrenmek istediği" teknolojiler eşleşen beceri olarak sayılmıyor.
 - **Araç açıklaması, modelin arayüzü.** FastMCP şemayı docstring ve tür ipuçlarından üretiyor; parametre adları ve açıklamalar Inspector'da modelin gördüğü biçimde kontrol edildi.
 
@@ -75,7 +75,7 @@ npx @modelcontextprotocol/inspector python server.py
 | | |
 |---|---|
 | ![](docs/ekran_goruntuleri/02_inspector_arac_formu.png)<br/>`search_postings` aracının Inspector'daki şeması | ![](docs/ekran_goruntuleri/03_inspector_basarili_cagri.png)<br/>`get_posting` başarılı çağrı |
-| ![](docs/ekran_goruntuleri/06_colab_v1_bolge_kisiti.jpg)<br/>Colab · 1. sürüm: yalnız arama araçlarıyla bölge kısıtı gözden kaçıyor | ![](docs/ekran_goruntuleri/07_colab_v2_check_fit.jpg)<br/>Colab · 2. sürüm: `check_fit` ile doğru karar |
+| ![](docs/ekran_goruntuleri/06_colab_v1_bolge_kisiti.jpg)<br/>Colab A100 · 1. sürüm: yalnız arama araçlarıyla bölge kısıtı gözden kaçıyor | ![](docs/ekran_goruntuleri/07_colab_v2_check_fit.jpg)<br/>Colab A100 · 2. sürüm: `check_fit` ile doğru karar |
 | ![](docs/ekran_goruntuleri/01_ilan_standartlastirma.png)<br/>İlanların ortak şablona dönüşümü | ![](docs/ekran_goruntuleri/05_inspector_toolerror.png)<br/>Olmayan ilan: `ToolError` |
 
 ## Lisans
