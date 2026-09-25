@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - name: Birim ve MCP protokol testleri
+        run: pytest -v
+      - name: Not defterleri (01, 02)
+        run: |
+          pip install nbconvert ipykernel
+          jupyter nbconvert --to notebook --execute --output-dir /tmp notebooks/01_ilan_standartlastirma.ipynb notebooks/02_profil_eslestirme.ipynb
