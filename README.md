@@ -72,11 +72,14 @@ npx @modelcontextprotocol/inspector python server.py
 
 ## Ekran görüntüleri
 
+Not defterleri 01–02 ve MCP Inspector görüntüleri MacBook Air (Apple Silicon, Python 3.12) üzerinde, Colab görüntüleri A100 GPU'da alındı.
+
 | | |
 |---|---|
-| ![](docs/ekran_goruntuleri/02_inspector_arac_formu.png)<br/>`search_postings` aracının Inspector'daki şeması | ![](docs/ekran_goruntuleri/03_inspector_basarili_cagri.png)<br/>`get_posting` başarılı çağrı |
+| ![](docs/ekran_goruntuleri/01_ilan_standartlastirma.jpg)<br/>İlanların ortak şablona dönüşümü | ![](docs/ekran_goruntuleri/04_profil_on_kontrol.jpg)<br/>Örnek profil ile ön kontrol |
+| ![](docs/ekran_goruntuleri/02_inspector_arac_formu.jpg)<br/>`search_postings` aracının Inspector'daki şeması | ![](docs/ekran_goruntuleri/03_inspector_basarili_cagri.jpg)<br/>`get_posting` başarılı çağrı (ücret belirtilmediği için `null`) |
+| ![](docs/ekran_goruntuleri/05_inspector_toolerror.jpg)<br/>Olmayan ilan: `ToolError` | |
 | ![](docs/ekran_goruntuleri/06_colab_v1_bolge_kisiti.jpg)<br/>Colab A100 · 1. sürüm: yalnız arama araçlarıyla bölge kısıtı gözden kaçıyor | ![](docs/ekran_goruntuleri/07_colab_v2_check_fit.jpg)<br/>Colab A100 · 2. sürüm: `check_fit` ile doğru karar |
-| ![](docs/ekran_goruntuleri/01_ilan_standartlastirma.png)<br/>İlanların ortak şablona dönüşümü | ![](docs/ekran_goruntuleri/05_inspector_toolerror.png)<br/>Olmayan ilan: `ToolError` |
 
 ## Lisans
 
