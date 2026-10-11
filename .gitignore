@@ -5,3 +5,6 @@ __pycache__/
 .pytest_cache/
 mcp_server.log
 .DS_Store
+
+# ham API yanıtları (scripts/ilanlari_cek.sh)
+data/ham/
