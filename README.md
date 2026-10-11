@@ -21,7 +21,7 @@ flowchart LR
 1. **Veri** (`scripts/`): `ilanlari_cek.sh` dört şirketin ilanlarını işe alım sistemlerinin herkese açık ilan uçlarından indirir (giriş ya da sayfa kazıma yok, şirket başına tek istek). `veri_seti_olustur.py` bunlardan 14 ilanlık veri setini oluşturur; HTML düz metne çevrilir, tarih ve başvuru adresi alınmaz, e-posta ve telefon numaraları silinir.
 2. **Standartlaştırma** (`jobs.py`): Lever ve Greenhouse aynı bilgiyi farklı alanlarda veriyor (Lever'da `categories.commitment` ve `workplaceType`, Greenhouse'ta çalışma biçimi alanı hiç yok). İkisi de `JobPosting` şablonuna dönüştürülür: şirket, rol, konum, ülke, çalışma biçimi, çalışma türü, ücret, teknolojiler, istenen diller, vatandaşlık şartı, kaynak. **İlanda açıkça yazmayan bilgi tahmin edilmez, `None` kalır.**
 3. **MCP sunucusu** (`server.py`):
-   - `search_postings(keyword, remote_only=False, limit=5)`: başlık ve açıklamada anahtar kelime arar
+   - `search_postings(keyword, remote_only=False, limit=5)`: başlık ve açıklamada anahtar kelime arar. Türkçe ifadeler yaygın İngilizce karşılıklarıyla birlikte aranır ("veri bilimi" → "data scientist"), ifadenin başlıkta geçtiği ilanlar önde sıralanır
    - `get_posting(posting_id)`: tek ilanı şablonda döndürür, ilan yoksa `ToolError` verir (boş sonuç "uygun ilan yok" diye yorumlanmasın diye)
    - `check_fit(posting_id, skills, country, languages, wants_remote)`: kural tabanlı ön kontrol. İlanın ülkesini, vatandaşlık şartını (`Saudi Nationals Only` gibi), istenen dilleri, çalışma biçimini ve ilanda açıkça geçen becerilerle eşleşmeyi `FitReport` olarak döndürür
    - `tr-jobs://sources` kaynağı: kullanılan ilan uçları
@@ -33,7 +33,7 @@ flowchart LR
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements-dev.txt
-pytest -v                                   # 20 test
+pytest -v                                   # 21 test
 ```
 
 Veriyi yeniden oluşturmak için (ilanlar kapanmış olabilir; seçim listesi `scripts/veri_seti_olustur.py` içinde):
@@ -70,6 +70,7 @@ npx @modelcontextprotocol/inspector python server.py
 
 - **Eksik bilgi ≠ olumsuz bilgi.** Ücretin yazmaması düşük olduğu anlamına gelmez. 14 ilanın hiçbirinde ücret yok; Greenhouse ilanında çalışma biçimi ve türü de belirtilmemiş. Bu alanlar boş bırakıldı.
 - **Teknik uyum, başvurulabilirlik demek değil.** Örnek profille en çok örtüşen ilan (Trendyol, Data Scientist) açıklamasında ileri düzey Arapça istiyor; Riyad'daki ilan yalnızca Suudi vatandaşlarına açık. Bu şartları modelin yorumuna bırakmak yerine `check_fit` aracını ekledim; sistem istemi öneriden önce bu aracın çağrılmasını istiyor.
+- **Türkçe soru, İngilizce ilan.** İlk Colab denemesinde model "veri bilimi veya yapay zekâ" diye aradı; ilanlar İngilizce olduğu için sonuç boş döndü ve model "uygun ilan yok" dedi. Hata modelde değil araçtaydı: aramaya Türkçe–İngilizce karşılık eşlemesi ve başlık eşleşmesine göre sıralama ekledim.
 - **Kısa adlar dikkat ister.** "Go" ya da "REST" büyük/küçük harf duyarsız aranınca sıradan İngilizce kelimelerle eşleşiyor; kısaltmalar harf duyarlı aranıyor.
 - **Öğrenme hedefi deneyim sayılmaz.** Profildeki "öğrenmek istediği" teknolojiler eşleşen beceri olarak sayılmıyor.
 - **Araç açıklaması, modelin arayüzü.** FastMCP şemayı docstring ve tür ipuçlarından üretiyor; parametre adları ve açıklamalar Inspector'da modelin gördüğü biçimde kontrol edildi.

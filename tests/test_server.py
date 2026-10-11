@@ -32,6 +32,15 @@ async def test_search_filters_remote():
     assert {r["company"] for r in rows} == {"Midas", "Insider One"}
 
 
+async def test_turkish_query_finds_english_postings():
+    async with create_connected_server_and_client_session(mcp._mcp_server) as client:
+        res = await client.call_tool("search_postings", {"keyword": "veri bilimi veya yapay zekâ", "limit": 20})
+    rows = res.structuredContent["result"]
+    roles = {r["role"] for r in rows}
+    assert "Data Scientist (Pre-Search)" in roles and "AI Engineer, Performance Marketing" in roles
+    assert "Marketplace Development Lead" not in roles   # "ai" kelime içinde eşleşmedi
+
+
 async def test_unknown_posting_returns_tool_error():
     async with create_connected_server_and_client_session(mcp._mcp_server) as client:
         res = await client.call_tool("get_posting", {"posting_id": 12345})

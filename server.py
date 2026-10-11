@@ -1,6 +1,7 @@
 """İş fırsatı ajanı için MCP sunucusu (Türk şirketlerinin kariyer sayfalarındaki ilanlar)."""
 import json
 import logging
+import re
 import sys
 
 from mcp.server.fastmcp import FastMCP
@@ -22,23 +23,57 @@ def _find(posting_id: int) -> dict:
     raise ToolError(f"{posting_id} numaralı ilan bulunamadı")
 
 
+# İlanların çoğu İngilizce; Türkçe aramalar yaygın İngilizce karşılıklarıyla birlikte aranır
+SYNONYMS = {
+    "veri bilimi": ["data science", "data scientist"], "veri bilimci": ["data science", "data scientist"],
+    "yapay zeka": ["ai", "machine learning", "llm"], "makine öğrenmesi": ["machine learning"],
+    "yazılım mühendisi": ["software engineer"], "yazılım": ["software"], "güvenlik": ["security"],
+    "ürün yöneticisi": ["product manager"], "veri analizi": ["analytics"], "analitik": ["analytics"],
+    "uzaktan": ["remote"],
+}
+
+
+def _terms(keyword: str) -> list[str]:
+    """'veri bilimi veya yapay zekâ' gibi bir aramayı ayrı ifadelere ve karşılıklarına böler."""
+    text = keyword.lower().replace("â", "a").replace("î", "i").replace("û", "u")
+    parts = [p.strip() for p in re.split(r",|/|\bveya\b|\bya da\b|\bor\b", text) if p.strip()]
+    terms = []
+    for part in parts:
+        terms.append(part)
+        terms += SYNONYMS.get(part, [])
+    return terms
+
+
+def _matches(term: str, text: str) -> bool:
+    if len(term) <= 3:  # "ai" gibi kısa ifadeler kelime içinde (ör. "maintain") eşleşmesin
+        return re.search(rf"\b{re.escape(term)}\b", text, re.I) is not None
+    return term in text.lower()
+
+
 @mcp.tool()
 def search_postings(keyword: str, remote_only: bool = False, limit: int = 5) -> list[dict]:
     """Trendyol, Insider One, Midas ve Dream Games ilanlarında anahtar kelime arar.
 
-    Başlık ve açıklama metninde arar. Dönüş: eşleşen ilanların id, şirket, rol, konum ve çalışma biçimi.
+    Başlık ve açıklama metninde arar. İlanların çoğu İngilizcedir; Türkçe ifadeler yaygın
+    İngilizce karşılıklarıyla birlikte aranır (ör. "veri bilimi" -> "data scientist").
+    Birden fazla ifade "veya" ya da virgülle ayrılabilir; herhangi biri eşleşirse ilan döner.
+    Sonuçlar, ifadenin başlıkta geçtiği ilanlar önde olacak şekilde sıralanır.
+    Dönüş: eşleşen ilanların id, şirket, rol, konum ve çalışma biçimi.
     """
-    log.info("arama: %s (remote_only=%s)", keyword, remote_only)
-    results = []
+    terms = _terms(keyword)
+    log.info("arama: %s -> %s (remote_only=%s)", keyword, terms, remote_only)
+    scored = []
     for post in load_posts():
-        if keyword.lower() not in full_text(post).lower():
-            continue
+        text = full_text(post)
         job = normalize(post)
-        if remote_only and job.work_mode != "remote":
+        # başlıkta geçen ifade açıklamada geçenden daha güçlü bir işarettir
+        score = sum(3 if _matches(t, job.role) else 1 for t in terms if _matches(t, text))
+        if score == 0 or (remote_only and job.work_mode != "remote"):
             continue
-        results.append({"id": job.id, "company": job.company, "role": job.role,
-                        "location": job.location, "work_mode": job.work_mode})
-    return results[:limit]
+        scored.append((score, {"id": job.id, "company": job.company, "role": job.role,
+                               "location": job.location, "work_mode": job.work_mode}))
+    scored.sort(key=lambda x: -x[0])   # sıralama kararlı: eşit puanda veri setindeki sıra korunur
+    return [row for _, row in scored[:limit]]
 
 
 @mcp.tool()
