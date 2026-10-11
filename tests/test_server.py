@@ -29,11 +29,12 @@ async def test_search_filters_remote():
         res = await client.call_tool("search_postings", {"keyword": "python", "remote_only": True, "limit": 10})
     rows = res.structuredContent["result"]
     assert rows and all(r["work_mode"] == "remote" for r in rows)
+    assert {r["company"] for r in rows} == {"Midas", "Insider One"}
 
 
 async def test_unknown_posting_returns_tool_error():
     async with create_connected_server_and_client_session(mcp._mcp_server) as client:
-        res = await client.call_tool("get_posting", {"posting_id": 1})
+        res = await client.call_tool("get_posting", {"posting_id": 12345})
     assert res.isError
     assert "bulunamadı" in res.content[0].text
 
@@ -45,9 +46,9 @@ def test_parse_tool_calls_ignores_broken_json():
 
 async def test_agent_loop_with_scripted_model():
     script = iter([
-        '<tool_call>{"name": "search_postings", "arguments": {"keyword": "PostgreSQL", "remote_only": true}}</tool_call>',
-        '<tool_call>{"name": "search_postings", "arguments": {"keyword": "PostgreSQL", "remote_only": true}}</tool_call>',
-        "Uzaktan ve PostgreSQL kullanan ilanlar bulundu.",
+        '<tool_call>{"name": "search_postings", "arguments": {"keyword": "Python", "remote_only": true}}</tool_call>',
+        '<tool_call>{"name": "search_postings", "arguments": {"keyword": "Python", "remote_only": true}}</tool_call>',
+        "Uzaktan ve Python kullanan ilanlar bulundu.",
     ])
 
     def fake_model(messages, tools):
@@ -56,7 +57,7 @@ async def test_agent_loop_with_scripted_model():
         return next(script)
 
     async with create_connected_server_and_client_session(mcp._mcp_server) as client:
-        result = await run_agent("Uzaktan PostgreSQL ilanı var mı?", client, fake_model)
+        result = await run_agent("Uzaktan Python ilanı var mı?", client, fake_model)
 
     kinds = [s.kind for s in result.steps]
     assert kinds == ["tool_call", "tool_result", "tool_call", "tool_result", "answer"]
@@ -75,12 +76,20 @@ async def test_agent_stops_at_step_limit():
     assert result.steps[-1].kind == "error"
 
 
-async def test_check_fit_flags_region_restricted_remote_job():
+async def test_check_fit_flags_language_requirement():
     async with create_connected_server_and_client_session(mcp._mcp_server) as client:
-        res = await client.call_tool("check_fit", {"posting_id": 49156689, "skills": ["Python", "Docker", "AWS"]})
+        res = await client.call_tool("check_fit", {"posting_id": 9, "skills": ["Python", "SQL", "Docker"]})
     fit = res.structuredContent
-    assert fit["company"] == "Snout" and fit["region_restricted"] and not fit["eligible"]
-    assert fit["matched_skills"] == ["AWS", "Python"]
+    assert fit["company"] == "Trendyol" and not fit["eligible"]
+    assert "dil şartı: Arapça" in fit["reasons"]
+    assert fit["matched_skills"] == ["Python", "SQL"]
+
+
+async def test_check_fit_accepts_user_languages():
+    async with create_connected_server_and_client_session(mcp._mcp_server) as client:
+        res = await client.call_tool("check_fit", {"posting_id": 8, "skills": [],
+                                                   "languages": ["Türkçe", "İngilizce", "Almanca"]})
+    assert res.structuredContent["eligible"]
 
 
 async def test_allowed_tools_hides_tools_and_rejects_unknown_calls():

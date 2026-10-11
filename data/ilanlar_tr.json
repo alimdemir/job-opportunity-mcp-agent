@@ -1,0 +1,505 @@
+{
+ "description": "Türk teknoloji şirketlerinin kariyer sayfalarındaki ilanlar; işe alım sistemlerinin herkese açık ilan uçlarından (Lever, Greenhouse) alındı.",
+ "sources": [
+  {
+   "company": "Trendyol",
+   "system": "lever",
+   "url": "https://api.lever.co/v0/postings/trendyol?mode=json"
+  },
+  {
+   "company": "Insider One",
+   "system": "lever",
+   "url": "https://api.lever.co/v0/postings/insiderone?mode=json"
+  },
+  {
+   "company": "Midas",
+   "system": "lever",
+   "url": "https://api.lever.co/v0/postings/getmidas?mode=json"
+  },
+  {
+   "company": "Dream Games",
+   "system": "greenhouse",
+   "url": "https://boards-api.greenhouse.io/v1/boards/dreamgames/jobs?content=true"
+  }
+ ],
+ "posts": [
+  {
+   "id": 1,
+   "company": "Midas",
+   "source": "lever",
+   "raw": {
+    "id": "79cce898-6063-43b2-819a-2f4072dd8bcb",
+    "text": "Software Engineer",
+    "categories": {
+     "location": "İstanbul, Turkey",
+     "commitment": "Full-Time",
+     "team": "Product Engineering",
+     "department": "Engineering",
+     "allLocations": [
+      "İstanbul, Turkey"
+     ]
+    },
+    "country": "TR",
+    "workplaceType": "remote",
+    "salaryRange": null,
+    "descriptionPlain": "At Midas, we tackle real-world engineering challenges to reshape the future of finance. Our mission is to build the fastest and most reliable products, delivering a seamless experience that empowers everyone to manage their money effortlessly.\n\nMore than 4 million users use our product.\n\nBacked by an $80M Series B, the largest fintech investment ever in Turkey, we are scaling faster than ever.\n\nRead Before You Apply 🚨\n\nThis role is not for everyone. We are looking for outlier engineers who:\n\nHave owned products end-to-end, from idea to production monitoring.\nHave managed live incidents, written post-mortems, and implemented long-term fixes.\nPassionate about delivering exceptional product experiences and maximizing user impact, beyond just writing code.\n\nYears of experience don’t matter — what matters is the depth of ownership, incident handling, and product impact you’ve delivered.\n\nIf this doesn’t sound like you, no worries — Midas has other opportunities that may be a better fit.",
+    "lists": [
+     {
+      "text": "What You’ll Do",
+      "content": "- Design and build scalable, low-latency systems powering real-time trading and financial data.\n\n- Take full ownership: from ideation, architecture, development, release & monitoring in production .\n\n- Collaborate cross-functionally with product, design, and infrastructure teams to deliver impactful features."
+     },
+     {
+      "text": "What We’re Looking For",
+      "content": "- Strong fundamentals in computer science and system design .\n\n- Hands-on backend development experience.\n\n- Deep knowledge of relational databases, caching systems , and distributed systems.\n\n- Proficient in containerized environments and modern cloud infrastructure, ensuring resilient and efficient deployments\n\n- Familiarity with event-driven architectures, microservices, reactive programming models .\n\n- Proven incident response experience in large-scale production environments is a strong plus.\n\n- Prior exposure to financial or mission-critical systems is a strong plus."
+     },
+     {
+      "text": "How We Work",
+      "content": "- Full ownership — you don’t wait, you solve.\n\n- First principles mindset — you question assumptions and rebuild where needed.\n\n- Balance speed & quality — you ship fast, but always clean.\n\n- Product mindset — you care about the user impact, not just the code.\n\n- Calm under pressure — incidents happen; you lead with clarity and composure."
+     }
+    ],
+    "hostedUrl": "https://jobs.lever.co/getmidas/79cce898-6063-43b2-819a-2f4072dd8bcb"
+   }
+  },
+  {
+   "id": 2,
+   "company": "Midas",
+   "source": "lever",
+   "raw": {
+    "id": "536b118f-21c2-4467-b893-c5dc3c90e9ca",
+    "text": "Senior Software Engineer",
+    "categories": {
+     "location": "Turkey",
+     "commitment": "Permanent Full-Time",
+     "team": "Product Engineering",
+     "department": "Engineering",
+     "allLocations": [
+      "Turkey"
+     ]
+    },
+    "country": "TR",
+    "workplaceType": "remote",
+    "salaryRange": null,
+    "descriptionPlain": "At Midas, we are solving real-world engineering problems to transform how millions of people interact with money.\n\nWe're transforming investing in Turkey — creating a seamless experience for everyday investors on one end, and building powerful tools for advanced traders on the other.\n\nToday, over 4 million users trust Midas with their investments. Backed by an $80M Series B — the largest fintech investment in Turkey — we are scaling faster than ever.\n\nMore importantly, we are building mission-critical financial systems where reliability, performance, and correctness are non-negotiable.",
+    "lists": [
+     {
+      "text": "What You’ll Do",
+      "content": "- Design and develop high-volume, low-latency systems running 24/7 with zero downtime, impacting real users and real money\n\n- Own the full lifecycle-from design to production-while ensuring clear and effective communication across teams\n\n- Take ownership of large, complex systems, ensuring resiliency and reliability from prevention to rapid recovery\n\n- Collaborate closely with product and business teams as a product-minded engineer\n\n- Actively contribute to a culture of clear, frequent, and effective communication across teams\n\n- Write clean, testable, and maintainable code with a strong focus on production quality\n\n- Make and contribute to pragmatic architectural decisions, balancing real-world trade-offs\n\n- Continuously improve systems with a focus on observability, maintainability, and operational excellence\n\n- Support and mentor other engineers through technical guidance, feedback, and knowledge sharing\n\n- Leverage modern tools, including AI-assisted development, to improve productivity while maintaining high quality standards"
+     },
+     {
+      "text": "What You’ll Bring",
+      "content": "- Strong software development experience with a solid engineering foundation\n\n- Experience designing and building scalable and reliable systems\n\n- Good understanding of distributed systems, concurrency, and data consistency challenges\n\n- Experience working with transactional systems and critical data flows\n\n- Familiarity with event-driven and asynchronous architectures\n\n- Understanding of monitoring, alerting, and production systems\n\n- Ability to think in trade-offs, not just ideal solutions\n\n- Comfort operating in high-ambiguity environments and turning unclear problems into concrete solutions\n\n- A mindset of ownership, accountability, and delivering outcomes\n\n- Strong communication skills, able to articulate decisions, align stakeholders, and drive clarity\n\n- Willingness to mentor and elevate the team, not just contribute individually\n\n- Ability to effectively use AI tools as a productivity multiplier, while maintaining engineering rigor"
+     }
+    ],
+    "hostedUrl": "https://jobs.lever.co/getmidas/536b118f-21c2-4467-b893-c5dc3c90e9ca"
+   }
+  },
+  {
+   "id": 3,
+   "company": "Midas",
+   "source": "lever",
+   "raw": {
+    "id": "06b3a906-b139-41b7-b3a2-b794992af3f2",
+    "text": "Quantitative Developer",
+    "categories": {
+     "location": "İstanbul, Turkey",
+     "commitment": "Full-Time",
+     "team": "Product Engineering",
+     "department": "Engineering",
+     "allLocations": [
+      "İstanbul, Turkey"
+     ]
+    },
+    "country": "TR",
+    "workplaceType": "remote",
+    "salaryRange": null,
+    "descriptionPlain": "At Midas, we tackle real-world engineering challenges to reshape the future of finance. Our mission is to build the fastest and most reliable products, delivering a seamless experience that empowers everyone to manage their money effortlessly.\n\nMore than 4 million users use our product.\n\nBacked by an $80M Series B, the largest fintech investment ever in Turkey, we are scaling faster than ever.\n\nRead Before You Apply 🚨\n\nThis role is not for everyone. We are looking for outlier engineers who:\n\nHave owned products end-to-end, from idea to production monitoring.\nHave managed live incidents, written post-mortems, and implemented long-term fixes.\nPassionate about delivering exceptional product experiences and maximizing user impact, beyond just writing code.\n\nYears of experience don’t matter — what matters is the depth of ownership, incident handling, and product impact you’ve delivered.\n\nIf this doesn’t sound like you, no worries — Midas has other opportunities that may be a better fit.",
+    "lists": [
+     {
+      "text": "What You’ll Do",
+      "content": "-\nDesign, build, and optimize automated execution and hedging systems operating across crypto exchanges and liquidity venues.\n\n-\nDevelop execution algorithms, netting mechanisms, and dynamic hedging strategies to efficiently manage trade flow and market exposure.\n\n-\nBuild systems to manage, rebalance, and risk-manage inventory positions resulting from trading and execution activity.\n\n-\nOwn the full lifecycle: from quantitative research, backtesting, and simulation to implementation, deployment, monitoring, and live performance tuning.\n\n-\nAnalyze market microstructure, order book dynamics, execution quality, slippage, and trading performance to identify opportunities and continuously improve strategies.\n\n-\nBuild high-throughput, low-latency trading systems using Go for core execution services and Python for research, analysis, and strategy development.\n\n-\nMake pragmatic architectural and quantitative decisions, balancing execution quality, latency, risk, reliability, and trading costs.\n\n-\nContinuously improve live trading systems with a focus on performance, observability, resiliency, and operational excellence."
+     },
+     {
+      "text": "What We’re Looking For",
+      "content": "-\nStrong fundamentals in computer science, algorithms, data structures, and quantitative problem solving.\n\n-\nHands-on experience building quantitative trading, algorithmic trading, execution, or HFT systems.\n\n-\nStrong understanding of market microstructure, order books, execution, slippage, and liquidity.\n\n-\nExperience with execution algorithms, netting, dynamic or delta hedging, and inventory management.\n\n-\nDeep understanding of crypto market structure and exchange mechanics, including REST/WebSocket APIs and real-time market data.\n\n-\nStrong experience with Go (Golang) for concurrent, high-throughput, performance-sensitive systems.\n\n-\nProficiency in Python for research, data analysis, backtesting, simulation, and strategy prototyping.\n\n-\nAbility to go beyond implementation: challenge assumptions, translate market behavior into quantitative hypotheses, and continuously improve execution and hedging strategies.\n\n-\nExperience building and operating resilient, production-grade systems in 24/7 real-time markets.\n\n-\nFamiliarity with distributed systems, event-driven architectures, queueing systems, and modern cloud environments is a strong plus.\n\n-\nA mindset of ownership and accountability — you care about execution quality, risk, and live trading performance, not just the code."
+     },
+     {
+      "text": "How We Work",
+      "content": "- Full ownership — you don’t wait, you solve.\n\n- First principles mindset — you question assumptions and rebuild where needed.\n\n- Balance speed & quality — you ship fast, but always clean.\n\n- Product mindset — you care about the user impact, not just the code.\n\n- Calm under pressure — incidents happen; you lead with clarity and composure."
+     }
+    ],
+    "hostedUrl": "https://jobs.lever.co/getmidas/06b3a906-b139-41b7-b3a2-b794992af3f2"
+   }
+  },
+  {
+   "id": 4,
+   "company": "Midas",
+   "source": "lever",
+   "raw": {
+    "id": "ebd7df4f-afa5-42ea-a431-d51c1fdf50fa",
+    "text": "Analytics Manager",
+    "categories": {
+     "location": "İstanbul, Turkey",
+     "commitment": "Full-Time",
+     "team": "Analytics",
+     "department": "Business and Product",
+     "allLocations": [
+      "İstanbul, Turkey"
+     ]
+    },
+    "country": "TR",
+    "workplaceType": "hybrid",
+    "salaryRange": null,
+    "descriptionPlain": "Join Midas Team, where you will work on real-life problems in one of Europe’s fastest growing fintech.\nWe are building the future of investing. Our product is used by more than 4 million users. 1 out of 5 people your age uses Midas for equity investing. We are inviting you to build the product you will use for money.\n\nThe Analytics Manager will be pivotal in our data-driven decision-making process, responsible for interpreting data facts into actionable insights, creating forecasting models, and developing predictive analytics.\nYou will work closely with cross-functional teams to understand their data needs, provide analytical support, and guide strategic decisions.",
+    "lists": [
+     {
+      "text": "About Midas Team",
+      "content": "- We solve challenging problems and build 10x better products.\n\n- We expect hard work, high ownership, a strong desire to learn.\n\n- We bring the best people, holding high quality standards, and an environment of speed and ambition.\n\n- You will get to push your boundaries and learn from the best."
+     },
+     {
+      "text": "What You’ll Do",
+      "content": "- Lead stakeholder engagement with Product, Design, Engineering, and other teams to influence subdomain roadmaps and enhance data-driven decision-making.\n\n- Manage a team of data analysts, ensuring smooth integration of new members and supporting their professional development.\n\n- Maintain high standards of performance and operational excellence, promoting the best practices in advanced analytics and measurement.\n\n- Ensure visibility and value creation of projects, influence adoption of correct metrics and strategies, and build trust with all stakeholders.\n\n- Summarize data, interpret results from analyses, and translate findings into actionable insights for internal partners and management.\n\n- Develop and maintain forecasting models to predict future business trends.\n\n- Create predictive analytics models to identify potential opportunities and risks.\n\n- Collaborate with cross-functional teams to understand their data needs and provide analytical support.\n\n- Present insights and recommendations to senior management and stakeholders.\n\n- Stay current with industry trends and best practices in data analytics and apply them to improve our processes.\n\n- Mentor and guide junior analysts to enhance their skills and knowledge."
+     },
+     {
+      "text": "What You’ll Bring",
+      "content": "-\nBachelor's or Master's degree in Engineering, Economics, Statistics, Mathematics, Computer Science, Data Science, or a related field.\n\n-\nProven experience as an Analytics Manager or similar role.\n\n-\nExperience with SQL and databases.\n\n-\nExcellent analytical, problem-solving, and critical thinking skills.\n\n-\nStrong communication skills, with the ability to present complex data findings to non-technical stakeholders.\n\n-\nAbility to work collaboratively in a team environment and manage multiple projects simultaneously.\n\n-\nAbility to turn insights into action."
+     }
+    ],
+    "hostedUrl": "https://jobs.lever.co/getmidas/ebd7df4f-afa5-42ea-a431-d51c1fdf50fa"
+   }
+  },
+  {
+   "id": 5,
+   "company": "Insider One",
+   "source": "lever",
+   "raw": {
+    "id": "ee932b8c-0e12-45c1-8c1a-1ec95c4e623c",
+    "text": "Software Engineer - (AI Native)",
+    "categories": {
+     "location": "Turkey",
+     "commitment": "Full-Time (Remote)",
+     "team": "Software Development",
+     "department": null,
+     "allLocations": [
+      "Turkey"
+     ]
+    },
+    "country": "TR",
+    "workplaceType": "remote",
+    "salaryRange": null,
+    "descriptionPlain": "Before jumping into all the information about the role and what you can bring to the table, let us introduce ourselves real quick.\n\nAbout us\n\nInsider One is the #1 platform that brings everything marketing and customer engagement teams need in one place so they can reach their peak potential and become unstoppable.\n\nOur story began with six desks and a vision to create a single platform to make industry-first technologies and emerging channels accessible to marketers worldwide. Today, Insider One is powered by 1,500+ team members representing 50+ nationalities across 30+ offices. With AI at its core and an integrated Customer Data Platform (CDP), Insider One unites data, personalization, and journey orchestration across the most extensive set of natively supported channels, including WhatsApp, SMS, Email, Web, App, and Site Search.\n\nWe recently raised one of the largest funding rounds in the industry, a $500M Series E led by General Atlantic. We are backed by top-notch investors, including Sequoia Capital, QIA, Riverwood, and Endeavor Catalyst, and trusted by 2000+ customers from high-growth startups to the most prestigious Fortune 500 companies such as Samsung, Nike, L’Oreal, Singapore Airlines, Nestlé, Nissan, Lenovo, Puma, IKEA, Allianz, Domino's, and the list goes on.\n\nInsider One was congratulated for becoming one of the only woman-founded, women-led B2B SaaS unicorns in the world. Loved by customers, recognized by analysts, we are the only vendor recognized as the #1 leader in all the capabilities marketing and customer engagement teams need. Don’t just take our word for it — see for yourself. We consistently outperform and continue our leadership, and the results speak for themselves.\n\nFrom day one, Insider One’s mission has not only been to build a world-class product company, but also to create one of the most socially progressive technology communities in the world. Through our social responsibility initiatives like 100 Social Responsibility Projects, AI Training for Teachers, Code Academy, SheCodes, SheLeads, and SheMarkables, our community has committed to scaling its impact on our communities across 30+ countries, driving initiatives in health, education, farming, animal rights, and increasing women’s representation in STEM.\n\nBehind all these achievements is an exceptionally talented, visionary team of overachievers that moves fast and agile, creating cutting-edge products, and focuses on making an impact. If you want to be a part of this journey, just keep reading.\n\nAbout the role\nMost engineering teams have added AI to their workflow. A few have rebuilt their workflow around it. We are moving to the second group, and we are hiring engineers to build it with us.\nThis is not a role where you build LLM products. This is a role where you build our product with agents.\nYou will work inside a real, high-traffic production codebase: the platform that 2,000+ brands use to engage customers across channels, processing 2.2 billion requests and delivering nearly 2 billion notifications every day. You will plan, implement, test, review, debug and ship features with coding agents doing most of the writing, while you set the intent and own the outcome.\nYou are not expected to arrive with a company-wide standard in your head. You are expected to already work this way every day, and to leave the team with better prompts, skills, agents and guardrails than it had before you.\nIf your first reaction to a repetitive workflow is \"this should be an agent,\" we should probably talk.\nWhy this role exists\nWe looked at how our engineers work today. Some of them use AI to finish a line of code faster. That is autocomplete, and it is not what we mean.\nWe mean the full loop: you scope a change, an agent reads the codebase and writes a plan, you correct the plan, the agent implements across many files, runs the tests, fixes what it broke, and opens a pull request. You review the output like a senior engineer reviews a junior — because that is exactly what it is.\nSome people already work like this every day. We want more of them on the team, and we want them building the tooling that makes it easy for everyone else.",
+    "lists": [
+     {
+      "text": "What You Will Do",
+      "content": "- Ship with agents. Claude Code first, plus Codex, Cursor, Copilot or whatever earns its place — your main tool across planning, implementation, testing, debugging, refactoring, documentation and review. Real features in production, with the quality bar you would hold for hand-written code.\n\n- Own the output. Treat what the agent writes as untrusted until you have reviewed it: hallucinations, wrong assumptions, hardcoded secrets, missing validation, injection-prone patterns. Run it, confirm it works, iterate. For authentication, authorization, cryptography and session handling, use our standard implementation rather than the model's invention.\n\n- Fix the context, not the prompt. Keep CLAUDE.md, coding standards, architecture notes and module dependencies current so the agent gets it right the first time. Feed SAST (Static Application Security Testing) and dependency findings back with call path and data flow, so it writes a real patch instead of a suppression.\n\n- Build team-level tooling. Prompts, skills, sub-agents and MCP (Model Context Protocol) integrations for the work that keeps coming back, plus guardrails that keep agents in bounds: architectural limits, forbidden patterns, off-limits folders. Keep the context lean and watch token cost.\n\n- Use agents across the whole lifecycle, not just for code. Integration tests and coverage gap analysis, regression tests generated from real production incidents, root-cause analysis with logs and traces pulled in, ADRs (Architecture Decision Record) and runbooks drafted with AI and checked by you.\n\n- Review AI-assisted work well. Run context-aware AI review on your own diffs, separate true positives from false positives, and turn recurring false positives or escaped bugs into rules the team keeps.\n\n- Share what works. Show your setup to the team, review other people's AI-assisted pull requests, and get at least one thing you built adopted beyond your own repo."
+     },
+     {
+      "text": "What You Will Need",
+      "content": "Must have\n\n- Daily use of coding agents on real work. Not a course, not a demo. Code with users, where the agent did a large share of the writing and you owned the result.\n\n- At least one project you can walk us through end to end with these tools: what you delegated, what you kept, where it failed you, and how you caught it.\n\n- Agentic experience: tool and function calling, multi-step workflows, state, error recovery, human-in-the-loop.\n\n- Context discipline. You can show how you set an agent up to succeed — project files, standards, examples, scoped tasks — and how that cut your rework.\n\n- Solid engineering fundamentals. Clean code, testing, error handling, security, performance. Agents make weak fundamentals more expensive, not less.\n\n- The judgment to know when the agent is wrong. Speed is easy to fake. Judgment is not, and it is what we will test.\n\n- Willingness to share it. You do not need to have run a training program. You do need to be the kind of person who shows a teammate the setup instead of keeping it.\n\nLanguage is not a filter. Go and PHP/Laravel are preferred because that is what we run; Python, TypeScript or anything else is fine if the rest is there.\n\nNice to have\n\n- Team-level tooling you built and other people used: shared skills, sub-agents, MCP servers, slash commands, or a review or test agent running in CI (Continuous Integration).\n\n- Security habits around agents: forbidden patterns, least privilege on the tools and credentials an agent can reach, secrets kept out of AI context, AI-suggested packages verified before they are merged.\n\n- Test and debugging depth with AI: coverage gap analysis, regression tests written from production incidents, root-cause work using observability data.\n\n- LLM work: prompt engineering, agent SDKs, or orchestration frameworks such as Strands Agents, LangChain or LlamaIndex.\n\n- Agentic patterns beyond the basics: RAG, MCP, skills, hooks, plugins.\n\n- Experience designing scalable, highly available systems, ideally in Go.\n\n- Curiosity about how these systems actually work under the hood: benchmarking them, breaking them, improving them.\n\nOn seniority\n\nWe are open on seniority. Mid-level and senior candidates are both evaluated, and your level comes from what you have shipped, not from the number on your CV. The one thing we do not flex on: agents are already how you work, not something you are planning to try."
+     },
+     {
+      "text": "What We Offer",
+      "content": "- Enjoy a monthly meal allowance designed to enhance your daily routine\n\n- Access comprehensive private health insurance\n\n- Find your people with yoga classes, running and cycling clubs, and nutrition workshops\n\n- Feed your curiosity with access to Spotify, LinkedIn Learning, Blinkist, MasterClass, Neoskola, and CloudGuru\n\n- Level up with internal trainings covering AI fundamentals, coding, foreign languages, and a wide range of personal development skills\n\n- Be part of a diverse team that’s as global as it gets — where every voice is heard and 50+ nationalities build together\n\n- Become a Shareowner through our eligibility-based “ESOP” and own a piece of what you build\n\n- Help build the team you want to work with and enjoy rewarding referral bonuses\n\n- Opportunities to give back to your community through volunteering and purpose-driven social impact projects\n\n- From global retreats to team-building activities, expect year-round events that turn into lifelong memories"
+     }
+    ],
+    "hostedUrl": "https://jobs.lever.co/insiderone/ee932b8c-0e12-45c1-8c1a-1ec95c4e623c"
+   }
+  },
+  {
+   "id": 6,
+   "company": "Insider One",
+   "source": "lever",
+   "raw": {
+    "id": "48999122-ba47-4d41-9934-647b826cafa4",
+    "text": "Information Security Engineer  - (Remote)",
+    "categories": {
+     "location": "Turkey",
+     "commitment": "Full-Time",
+     "team": "Software Development",
+     "department": null,
+     "allLocations": [
+      "Turkey"
+     ]
+    },
+    "country": "TR",
+    "workplaceType": "remote",
+    "salaryRange": null,
+    "descriptionPlain": "Before jumping into all the information about the role and what you can bring to the table, let us introduce ourselves real quick.\n\nAbout us\n\nInsider One is the #1 platform that brings everything marketing and customer engagement teams need in one place so they can reach their peak potential and become unstoppable.\n\nOur story began with six desks and a vision to create a single platform to make industry-first technologies and emerging channels accessible to marketers worldwide. Today, Insider One is powered by 1,500+ team members representing 50+ nationalities across 30+ offices. With AI at its core and an integrated Customer Data Platform (CDP), Insider One unites data, personalization, and journey orchestration across the most extensive set of natively supported channels, including WhatsApp, SMS, Email, Web, App, and Site Search.\n\nWe recently raised one of the largest funding rounds in the industry, a $500M Series E led by General Atlantic. We are backed by top-notch investors, including Sequoia Capital, QIA, Riverwood, and Endeavor Catalyst, and trusted by 2000+ customers from high-growth startups to the most prestigious Fortune 500 companies such as Samsung, Nike, L’Oreal, Singapore Airlines, Nestlé, Nissan, Lenovo, Puma, IKEA, Allianz, Domino's, and the list goes on.\n\nInsider One was congratulated for becoming one of the only woman-founded, women-led B2B SaaS unicorns in the world. Loved by customers, recognized by analysts, we are the only vendor recognized as the #1 leader in all the capabilities marketing and customer engagement teams need. Don’t just take our word for it — see for yourself. We consistently outperform and continue our leadership, and the results speak for themselves.\n\nFrom day one, Insider One’s mission has not only been to build a world-class product company, but also to create one of the most socially progressive technology communities in the world. Through our social responsibility initiatives like 100 Social Responsibility Projects, AI Training for Teachers, Code Academy, SheCodes, SheLeads, and SheMarkables, our community has committed to scaling its impact on our communities across 30+ countries, driving initiatives in health, education, farming, animal rights, and increasing women’s representation in STEM.\n\nBehind all these achievements is an exceptionally talented, visionary team of overachievers that moves fast and agile, creating cutting-edge products, and focuses on making an impact. If you want to be a part of this journey, just keep reading.\n\nAnd now? Now we are looking for a Security Engineer who wants to take their career one step further. If you think you are one of those people, here you will have the chance to work with the world's leading brands with Artificial Intelligence & Machine Learning technologies. Right now, while you are reading this, we are sending an average of 2.2 billion requests and almost 2 billion instant notifications to more than 450 servers a day. On the Artificial Intelligence and Predictive side, we have more than 100 TB of historical data. We do not wait for jobs or opportunities to come to our feet, we create them. We have now reached 25% of global users. If all these interests you, read on for more!\n\nOur Engineers and Software Developers always think with an innovative perspective, taking advantage of the inexhaustible power of the digital world. They create impressive and intelligent products like a true artist. Our Product and Development teams are located in our Istanbul office, so we produce and develop the technology we export to the world in our own country. As Insider One, we believe in cooperation and adapting the innovations brought by technology by acting fast. We work closely with other Departments with agile teams, and we are not afraid of getting our hands dirty. As we said; we do not wait for jobs or opportunities to come to our feet, we create them ourselves. You can check our Tech Stacks here!",
+    "lists": [
+     {
+      "text": "What You Will Do",
+      "content": "- Drive the implementation, maintenance, and continuous improvement of the ISO 27001 Information Security Management System (ISMS), including control maturity tracking and audit readiness\n\n- Support SOC 2 Type II compliance efforts, including control implementation, evidence collection, and audit coordination\n\n- Conduct and document internal audits, manage findings, and follow up on remediation plans across teams\n\n- Own and evolve the company-wide risk management program, including risk register, scoring methodology, risk acceptance, and exception processes\n\n- Provide governance and security oversight for AWS environments, including cloud security posture, access controls, and configuration baselines\n\n- Collaborate with Red Team and Blue Team to track, prioritize, and close technical security findings\n\n- Maintain, update, and enforce security policies, standards, and procedures across the organization\n\n- Design and execute security awareness and training programs tailored to different roles (engineering, ops, business)\n\n- Lead third-party/vendor security assessments, including risk evaluation, tiering, and continuous monitoring\n\n- Support and coordinate security incident handling, reporting, and post-incident review processes\n\n- Contribute to data protection and privacy governance (KVKK, GDPR), including DPIA processes and data lifecycle management\n\n- Drive AI / LLM governance practices, including secure usage policies, data exposure controls, and risk assessments for AI tools\n\n- Act as a security consultant to business units and engineering teams, supporting secure architecture, design reviews, and risk-based decision making\n\n- Contribute to security architecture and design review processes, including threat modeling and secure design guidance\n\n- Coordinate and enhance business continuity and disaster recovery (BCP/DR) processes, including testing, documentation, and continuous improvement"
+     },
+     {
+      "text": "What You Will Need",
+      "content": "- Strong knowledge of ISO 27001, ISMS processes, internal audits, and control frameworks\n\n- Hands-on experience with risk management practices, including risk identification, scoring, and mitigation tracking\n\n- Experience in Business Continuity Management (BCM) and disaster recovery planning\n\n- Solid understanding of AWS services and cloud security governance, including IAM, logging, and baseline hardening\n\n- Familiarity with SOC 2 Type II framework and control domains\n\n- Understanding of data security concepts, including data classification, data inventory, and data protection mechanisms\n\n- Experience with vendor security and third-party risk management processes\n\n- Knowledge of privacy regulations such as KVKK and GDPR, including practical implementation\n\n- Familiarity with AI/LLM risks and governance concepts is a strong plus\n\n- Strong documentation and reporting skills for audits, compliance, and executive visibility\n\n- Experience in responding to customer security questionnaires and audits\n\nSoft Skills & Expectations\n\n- Strong analytical thinking and ability to assess both technical and business risks\n\n- Ability to take ownership of security domains and drive initiatives end-to-end\n\n- Excellent written and verbal communication skills in English\n\n- Strong collaboration skills with both technical (engineering, DevOps) and non-technical teams\n\n- Ability to understand and communicate the business impact of security decisions\n\n- Capable of evaluating the security posture across cloud, application, endpoint, and data layers\n\n- Comfortable acting as a trusted advisor and consultant to internal stakeholders\n\n- Proactive mindset with a focus on continuous improvement\n\nAdditional Expectations\n\n- Willingness to provide on-call support for security-related incidents when necessary\n\n- Ownership of security projects from planning to execution and closure\n\n- Ability to track, validate, and close findings from audits, pentests, and internal reviews\n\n- Experience working with ticketing systems (Jira, etc.) to manage security tasks and follow-ups\n\n- Actively contributes to team collaboration, knowledge sharing, and process improvement\n\n- Ability to communicate clearly with internal teams, auditors, and external stakeholders\n\n- Maintains a positive and solution-oriented mindset in a fast-paced environment"
+     },
+     {
+      "text": "What We Offer",
+      "content": "- Enjoy a monthly meal allowance designed to enhance your daily routine.\n\n- Access comprehensive private health insurance.\n\n- Feed your curiosity with access to Spotify, LinkedIn Learning, Blinkist, MasterClass, Neoskola, and CloudGuru.\n\n- Level up with internal trainings covering AI fundamentals, coding, foreign languages, and a wide range of personal development skills.\n\n- Be part of a diverse team that’s as global as it gets, where every voice is heard and 50+ nationalities build together.\n\n- Become a Shareowner through our eligibility-based “ESOP” and own a piece of what you build.\n\n- Help build the team you want to work with and enjoy rewarding referral bonuses.\n\n- Opportunities to give back to your community through volunteering and purpose-driven social impact projects.\n\n- From global retreats to team-building activities, expect year-round events that turn into lifelong memories.\n\n- Get inspired by the greatest minds in the tech industry through events like our Tech & Dev Talks.\n\n- Work from anywhere in Turkey through our fully remote setup."
+     }
+    ],
+    "hostedUrl": "https://jobs.lever.co/insiderone/48999122-ba47-4d41-9934-647b826cafa4"
+   }
+  },
+  {
+   "id": 7,
+   "company": "Insider One",
+   "source": "lever",
+   "raw": {
+    "id": "0ac29396-b964-4725-878c-6bac813280d6",
+    "text": "AI Product Manager - B2B SaaS (Martech) - Remote",
+    "categories": {
+     "location": "Istanbul",
+     "commitment": "Full-Time (Remote)",
+     "team": "Product Management",
+     "department": null,
+     "allLocations": [
+      "Istanbul",
+      "Ankara, Turkey"
+     ]
+    },
+    "country": "TR",
+    "workplaceType": "remote",
+    "salaryRange": null,
+    "descriptionPlain": "Before jumping into all the information about the role and what you can bring to the table, let us introduce ourselves real quick.\n\nAbout us\n\nInsider One is the #1 platform that brings everything marketing and customer engagement teams need in one place so they can reach their peak potential and become unstoppable.\n\nOur story began with six desks and a vision to create a single platform to make industry-first technologies and emerging channels accessible to marketers worldwide. Today, Insider One is powered by 1,500+ team members representing 50+ nationalities across 30+ offices. With AI at its core and an integrated Customer Data Platform (CDP), Insider One unites data, personalization, and journey orchestration across the most extensive set of natively supported channels, including WhatsApp, SMS, Email, Web, App, and Site Search.\n\nWe recently raised one of the largest funding rounds in the industry, a $500M Series E led by General Atlantic. We are backed by top-notch investors, including Sequoia Capital, QIA, Riverwood, and Endeavor Catalyst, and trusted by 2000+ customers from high-growth startups to the most prestigious Fortune 500 companies such as Samsung, Nike, L’Oreal, Singapore Airlines, Nestlé, Nissan, Lenovo, Puma, IKEA, Allianz, Domino's, and the list goes on.\n\nInsider One was congratulated for becoming one of the only woman-founded, women-led B2B SaaS unicorns in the world. Loved by customers, recognized by analysts, we are the only vendor recognized as the #1 leader in all the capabilities marketing and customer engagement teams need. Don’t just take our word for it — see for yourself. We consistently outperform and continue our leadership, and the results speak for themselves.\n\nFrom day one, Insider One’s mission has not only been to build a world-class product company, but also to create one of the most socially progressive technology communities in the world. Through our social responsibility initiatives like 100 Social Responsibility Projects, AI Training for Teachers, Code Academy, SheCodes, SheLeads, and SheMarkables, our community has committed to scaling its impact on our communities across 30+ countries, driving initiatives in health, education, farming, animal rights, and increasing women’s representation in STEM.\n\nBehind all these achievements is an exceptionally talented, visionary team of overachievers that moves fast and agile, creating cutting-edge products, and focuses on making an impact. If you want to be a part of this journey, just keep reading.\n\nWe are looking for a Product Manager who wants to make the dream a reality.\n\nWhat is our mission?\n\nWe are visionaries who guide new product ideas. We are setting the vision for our growing family of products. We use data, research, strategy, and empathy to guide development and design teams toward a common goal since we believe that only our products can alter Insider One's destiny. We are Insider One’s innovators, our impact starts on day one, and our mission is to prove that break-through products can be created outside Silicon Valley.\n\nWhat are we offering?\n\nImpact; be a part of a world-class product team where we constantly get challenged with new things and the results of our actions create an impact for hundreds of millions of users every day.\nPersonal Growth; work closely with experienced PMs, get mentored by some of the best people in their fields, join tons of different training like sales, design, customer communication. Develop the skills that you need to become a successful product manager.\nExperience; get important responsibilities, learn from your mistakes without getting blamed, watch experienced people work on complex matters, gain one of the most important things to become a great product manager, experience.\nDelight; make tough decisions, release new features, create innovating products which bring ease and joy to the life of many individuals who use them.\nCommunity; surround yourself with great people who constantly help each other and push each other to be better, join many different events, and become a part of the Insider One Community.\n\nWhat are we searching for?\n\nLeadership, you can make decisions and set direction while motivating and inspiring people around you to follow you in that direction.\nCommunication, you serve as the diplomat of the team, you can transmit complex information to different audiences clearly and you are talented in reaching the information you need on the people you are talking to.\nProblem Solving, you are a natural-born problem solver, finding solutions to complex problems motivates and excites you, and at that moment when you solve the problem, feeling that sense of accomplishment is worth all the effort.\nTeamwork, you are easily able to work with people around you, help them when they need, give or take constructive feedback, despite any personal conflict between you and them.\nListening, despite the fact that communicating effectively is extremely important, you should also be able to gather information from many sources around you to help you make better-informed decisions on guiding and improving your products and services.\nEntrepreneurial Spirit, rather than waiting to adapt to change, you are actively seeking out change. You have a mindset that embraces critical questioning, innovation, and improvement. You can see the big picture, you are willing to take risks, you constantly seek new opportunities for innovation and you take ownership and pride in what you do. What are you going to do?",
+    "lists": [
+     {
+      "text": "What You Will Do",
+      "content": "- You are going to be the person who is responsible for defining the why, when, and what of the products that the engineering team is building. This means you will be leading cross-functional teams with your communication starting from a product's ideation all the way through to its launch.\n\n- You will be responsible for building a product and strategy which reflects Insider One's vision. Your job is to clearly articulate the business value to the product team so they understand the intent behind the new product or product release.\n\n- You will be defining the release process and coordinating all of the activities required to bring the product to market.\n\n- You will be managing and prioritizing product items. You will be owning the creative process of generating, developing, and curating new ideas. You will be continuously benchmarking, monitoring, and understanding market needs and requirements, competition, customer/user requirements, and emerging technologies.\n\n- You will be defining and analyzing the metrics to calculate how features or products are performing, what the level of customer satisfaction is, and provide suggestions for improvements.\n\n- You will always remember that building great products is invigorating. Successful products are built and adopted by customers when a group of committed, focused, and passionate team members play their positions to the best of their abilities. This starts with a strong product manager who feels a deep sense of responsibility for their role and a deep commitment to their team.\n\n- So, you are going to do your best to create great products that everybody loves."
+     },
+     {
+      "text": "What You Will Need",
+      "content": "- Experience using and applying Large Language Models . You should know how to prompt-engineer them, how to evaluate them, and understand how they are tuned.\n\n- Hands-on experience building or using LLM-powered agentic solutions.\n\n- Establish and refine processes to ensure quality and accuracy in the conversational AI channels (nice to have).\n\n- You have 3+ years of Product Management experience , preferably in a B2B SaaS product .\n\n- You have a Bachelor's Degree from a top-tier university, preferably in Engineering, Business Management, or a related field.\n\n- You have hands-on experience in Agile Product Development .\n\n- You have hands-on experience in leading cross-functional teams and delivering projects on a time-bounded schedule.\n\n- You have a strong understanding of GenAI fundamentals (LLMs, prompt engineering, RAG, fine-tuning, hallucinations, bias, accuracy, etc.).\n\n- You have worked with model APIs like OpenAI, Claude, or Mistral.\n\n- You have built or iterated on customer journeys using low-code/no-code tools and drag-and-drop automation platforms.\n\n- You have the ability to assimilate customer requirements, design appropriate solutions, and translate requirements into detailed product specifications.\n\n- You have the ability to manage complex initiatives with limited supervision.\n\n- You are fluent in English and Turkish"
+     },
+     {
+      "text": "What We Offer",
+      "content": "- Enjoy a monthly meal allowance designed to enhance your daily routine.\n\n- Access comprehensive private health insurance.\n\n- Feed your curiosity with access to Spotify, LinkedIn Learning, Blinkist, MasterClass, and Neoskola.\n\n- Level up with internal trainings covering AI fundamentals, coding, foreign languages, and a wide range of personal development skills.\n\n- Be part of a diverse team that’s as global as it gets, where every voice is heard, and 50+ nationalities build together.\n\n- Become a Shareowner through our eligibility-based “ESOP” and own a piece of what you build.\n\n- Help build the team you want to work with and enjoy rewarding referral bonuses.\n\n- Opportunities to give back to your community through volunteering and purpose-driven social impact projects.\n\n- From global retreats to team-building activities, expect year-round events that turn into lifelong memories.\n\n- Get inspired by the greatest minds in the tech industry through events like our Tech & Dev Talks.\n\n- Work from anywhere in Turkey through our fully remote setup."
+     }
+    ],
+    "hostedUrl": "https://jobs.lever.co/insiderone/0ac29396-b964-4725-878c-6bac813280d6"
+   }
+  },
+  {
+   "id": 8,
+   "company": "Insider One",
+   "source": "lever",
+   "raw": {
+    "id": "8c54696c-3ee8-4305-a985-1f81b9b7b1fd",
+    "text": "Technical Support Specialist (German Speaker)",
+    "categories": {
+     "location": "Istanbul, Turkiye",
+     "commitment": "Full-Time",
+     "team": "Customer Success",
+     "department": null,
+     "allLocations": [
+      "Istanbul, Turkiye"
+     ]
+    },
+    "country": "TR",
+    "workplaceType": "onsite",
+    "salaryRange": null,
+    "descriptionPlain": "Before jumping into all the information about the role and what you can bring to the table, let us introduce ourselves real quick.\n\nAbout us\n\nInsider One is the #1 platform that brings everything marketing and customer engagement teams need in one place so they can reach their peak potential and become unstoppable.\n\nOur story began with six desks and a vision to create a single platform to make industry-first technologies and emerging channels accessible to marketers worldwide. Today, Insider One is powered by 1,500+ team members representing 50+ nationalities across 30+ offices. With AI at its core and an integrated Customer Data Platform (CDP), Insider One unites data, personalization, and journey orchestration across the most extensive set of natively supported channels, including WhatsApp, SMS, Email, Web, App, and Site Search.\n\nWe recently raised one of the largest funding rounds in the industry, a $500M Series E led by General Atlantic. We are backed by top-notch investors, including Sequoia Capital, QIA, Riverwood, and Endeavor Catalyst, and trusted by 2000+ customers from high-growth startups to the most prestigious Fortune 500 companies such as Samsung, Nike, L’Oreal, Singapore Airlines, Nestlé, Nissan, Lenovo, Puma, IKEA, Allianz, Domino's, and the list goes on.\n\nInsider One was congratulated for becoming one of the only woman-founded, women-led B2B SaaS unicorns in the world. Loved by customers, recognized by analysts, we are the only vendor recognized as the #1 leader in all the capabilities marketing and customer engagement teams need. Don’t just take our word for it — see for yourself. We consistently outperform and continue our leadership, and the results speak for themselves.\n\nFrom day one, Insider One’s mission has not only been to build a world-class product company, but also to create one of the most socially progressive technology communities in the world. Through our social responsibility initiatives like 100 Social Responsibility Projects, AI Training for Teachers, Code Academy, SheCodes, SheLeads, and SheMarkables, our community has committed to scaling its impact on our communities across 30+ countries, driving initiatives in health, education, farming, animal rights, and increasing women’s representation in STEM.\n\nBehind all these achievements is an exceptionally talented, visionary team of overachievers that moves fast and agile, creating cutting-edge products, and focuses on making an impact. If you want to be a part of this journey, just keep reading.\n\nOur Partner Success Team consists of people from 31 different nationalities. They are how we thrive. They are our story makers. They are quick learners & problem solvers. They are the master problem solvers, they resolve, they care and they ignite. Each of them is part of harmonious teamwork that follows meaningful goals. They are creative and innovative when it comes to implementing best practices, they are strategists and methodological approachers, have their eyes set to converge on the ultimate goal that is the customers’ success in all of the 25 regions. They are top-notch when it comes to forming relationships and stakeholder management. They are the perfect combination of people-driven and data-driven as they thrive on analytical thinking, analysis, and collaboration simultaneously. They are constant impact makers, constant developers, always eager to climb the steps of their career in this ever-growing multinational environment. We were a company made of 6 tiny desks when we started, so we never forget how important our hard work and dedication are. Until now it has been an inspiring story on our side, so we wanted to let you in on it. The rest? The rest is just this paragraph minimized into some bullet points on what we offer & what we expect. But that’s the thing that makes the difference between storytellers & story makers; the things that grab your soul.",
+    "lists": [
+     {
+      "text": "What You Will Do",
+      "content": "- play a crucial role in the Customer Success Team that owns technical relationships with our partners using our products and services,\n\n- become an excellent communicator while mastering problem-solving skills,\n\n- work in coordination with the Customer Success Managers and be primarily responsible for supporting seamless experience for our partners,\n\n- troubleshoot technical issues, find resolutions for partner requests, review partner queries, and find creative solutions that streamline their requirements and leverage knowledge to help partners get over technical struggles while expanding to the Insider One platform,\n\n- contribute to building innovative products by advocating for partners by taking their feedback and sharing it with the Product team to improve processes and product offerings,\n\n- meet important SLAs like response time and the lead time for issue resolutions which is an important aspect."
+     },
+     {
+      "text": "What You Will Need",
+      "content": "- have a Bachelor’s Degree in Business, Communication, Programming, or Engineering related fields,\n\n- have 1+ years of experience in supporting a software product, ideally in SaaS or experience in MIS or Software Development teams,\n\n- You will be working with German clients,\n\n- have fluency in written and verbal German and English ,\n\n- Turkish is a plus\n\n- have a high sense of responsibility and accountability,\n\n- are able to provide timely responses and follow up systematically,\n\n- are a natural problem solver with a positive attitude and love for helping others succeed,\n\n- have good debugging/troubleshooting skills,\n\n- know your way around HTML, CSS, or other programming languages, would be a plus."
+     },
+     {
+      "text": "What We Offer",
+      "content": "- Enjoy a monthly meal allowance designed to enhance your daily routine\n\n- Access comprehensive private health insurance.\n\n- Find your people with yoga classes, running and cycling clubs, and nutrition workshops.\n\n- Feed your curiosity with access to Spotify, LinkedIn Learning, Blinkist, MasterClass, and Neoskola.\n\n- Level up with internal trainings covering AI fundamentals, coding, foreign languages, and a wide range of personal development skills.\n\n- Be part of a diverse team that’s as global as it gets — where every voice is heard and 50+ nationalities build together.\n\n- Become a Shareowner through our eligibility-based “ESOP” and own a piece of what you build.\n\n- Help build the team you want to work with and enjoy rewarding referral bonuses.\n\n- Opportunities to give back to your community through volunteering and purpose-driven social impact projects.\n\n- From global retreats to team-building activities, expect year-round events that turn into lifelong memories."
+     }
+    ],
+    "hostedUrl": "https://jobs.lever.co/insiderone/8c54696c-3ee8-4305-a985-1f81b9b7b1fd"
+   }
+  },
+  {
+   "id": 9,
+   "company": "Trendyol",
+   "source": "lever",
+   "raw": {
+    "id": "33c48e9f-762d-4081-ba43-ff7be9844310",
+    "text": "Data Scientist (Pre-Search)",
+    "categories": {
+     "location": "Istanbul / Maslak",
+     "commitment": "Full-time",
+     "team": "Data Science",
+     "department": "Engineering, Technology & Product",
+     "allLocations": [
+      "Istanbul / Maslak"
+     ]
+    },
+    "country": "TR",
+    "workplaceType": "hybrid",
+    "salaryRange": null,
+    "descriptionPlain": "About the Team\nAt Trendyol Tech, our mission is to create a positive impact in our ecosystem by enabling commerce through technology.\nWe solve complex problems with data, creativity, and agility — always driven by real outcomes. With a culture built on learning, collaboration, and ownership, we grow together while building what’s next.\n\nAbout the Role\n\nOur team builds the language intelligence and retrieval foundations behind Trendyol Search across multiple regions. We focus on helping customers express their intent accurately and discover relevant products quickly, regardless of the language or market they search in. As a Data Scientist, you will work on high-impact problems at the intersection of NLP, information retrieval, and e-commerce search. You will contribute to multi-regional search models covering spelling correction, query understanding, semantic and vector search, while taking particular ownership in improving the Arabic-language search experience. Your work will directly improve product discovery for millions of customers across Trendyol's markets.",
+    "lists": [
+     {
+      "text": "Responsibilities",
+      "content": "- Develop and improve query understanding capabilities for Trendyol's search experience across multiple regions and languages, including spelling correction, query normalization, query rewriting, intent detection, and semantic retrieval.\n\n- Build and evaluate vector search, embedding, and retrieval models that improve the relevance of product discovery for customers across different markets.\n\n- Take a leading role in Arabic-language search initiatives, addressing language-specific challenges such as dialectal variation, orthographic normalization, transliteration, morphology, mixed-language queries, and spelling errors.\n\n- Analyze large-scale structured and unstructured data, including search queries, product content, user interactions, and linguistic signals across the Trendyol ecosystem.\n\n- Design robust offline evaluation methodologies and quality metrics for query understanding, spelling correction, and retrieval systems; validate improvements through online A/B experiments.\n\n- Collaborate closely with Search, Pre-Search, Ranking, Product, and Engineering teams to translate customer and business needs into scalable machine learning solutions.\n\n- Improve model quality, latency, reliability, and deployment cycles by applying MLOps best practices to production ML systems.\n\n- Monitor model and search-quality performance after deployment, investigate regressions, and continuously iterate based on data and user feedback.\n\n- Communicate methodology, findings, and expected business impact clearly to technical and non-technical stakeholders."
+     },
+     {
+      "text": "Expected Qualifications",
+      "content": "- Experience in applied data science and machine learning, ideally in NLP, information retrieval, search, or language modeling domains.\n\n- Professional working proficiency in Arabic, with a strong understanding of Arabic grammar, morphology, spelling conventions, dialectal variation, and common search-query behavior. Native-level proficiency is a strong plus.\n\n- Practical experience with modern NLP methods, including transformer-based language models, text embeddings, semantic search, retrieval, reranking, query understanding, or spelling correction.\n\n- Familiarity with Arabic NLP resources, datasets, tokenization or normalization approaches, and evaluation challenges is highly preferred.\n\n- Strong Python skills and hands-on experience with relevant ML libraries such as PyTorch, TensorFlow, scikit-learn, Hugging Face Transformers, or similar frameworks.\n\n- Strong SQL knowledge and familiarity with data-analysis best practices.\n\n- Experience with vector databases, approximate nearest neighbor search, embedding models, or large-scale retrieval systems is a strong plus.\n\n- Experience designing and interpreting A/B experiments, offline evaluations, and statistical analyses.\n\n- Strong analytical skills, a data-driven mindset, and the ability to work effectively with ambiguous product problems.\n\n- Excellent written and verbal communication skills in English. Turkish is a plus.\n\n- Experience in e-commerce, marketplaces, search, recommendation, or self-service platforms is a plus."
+     }
+    ],
+    "hostedUrl": "https://jobs.lever.co/trendyol/33c48e9f-762d-4081-ba43-ff7be9844310"
+   }
+  },
+  {
+   "id": 10,
+   "company": "Trendyol",
+   "source": "lever",
+   "raw": {
+    "id": "13ea3eea-ac81-4242-b6c4-c70a5871bc4c",
+    "text": "Fraud Process & Analytics Professionals",
+    "categories": {
+     "location": "Istanbul / Maslak",
+     "commitment": "Full-time",
+     "team": "Risk Management",
+     "department": "Finance",
+     "allLocations": [
+      "Istanbul / Maslak"
+     ]
+    },
+    "country": "TR",
+    "workplaceType": "hybrid",
+    "salaryRange": null,
+    "descriptionPlain": "About the Team\nAt Trendyol Finance, we drive financial clarity, sustainability, and smart decision-making at every level of the business.\nAs a strategic partner to commercial teams, we bridge data with action—ensuring efficiency, compliance, and long-term value creation.\nFrom budgeting to forecasting, we turn numbers into insights that shape Trendyol’s growth journey in a fast-moving ecosystem.\n\nAbout the Role\nWe are seeking analytical, process-oriented and proactive Fraud Process & Analytics Professionals to join our Fraud team. This role sits at the intersection of fraud domain knowledge, data analysis, process design and project delivery.\nYou will identify fraud and abuse risks, translate business problems into analytical questions, use data to quantify root causes and impact, design scalable controls and rulesets, and drive improvements together with Product, Data, Tech, Operations and Business teams. The role is not limited to reviewing individual cases; the main focus is to turn recurring fraud problems into measurable, scalable and sustainable solutions.",
+    "lists": [
+     {
+      "text": "Your Main Responsibilities",
+      "content": "- Own and improve fraud-related processes end-to-end by identifying control gaps, bottlenecks, manual steps and potential abuse points, and drive scalable improvements through automation, product changes or operational redesign.\n\n- Analyze customer, seller, order, payment and behavioral data using SQL / BigQuery to identify fraud patterns, anomalies, root causes and emerging risk signals; structure ambiguous problems into clear hypotheses, populations and success metrics.\n\n- Quantify the financial, operational and customer/seller experience impact of fraud problems, prioritize initiatives accordingly, and translate analytical findings into actionable recommendations.\n\n- Design and improve fraud rulesets, risk indicators, thresholds, controls and monitoring frameworks, considering false positive / false negative trade-offs and overall control effectiveness.\n\n- Drive cross-functional fraud projects from problem definition and business case through implementation and post-launch monitoring, working closely with Product, Tech, Data, Operations and Business teams.\n\n- Build clear reporting and monitoring structures to track fraud KPIs, leakage, operational cost, control performance and project impact, and communicate findings, risks and recommendations to relevant stakeholders."
+     },
+     {
+      "text": "Qualities We're Looking for",
+      "content": "- 2-6 years of experience in Fraud, Business Development, Risk Analytics, Internal Audit a similar analytical role.\n\n- Strong problem-solving and root-cause analysis skills, with the ability to turn data into actionable recommendations.\n\n- Strong analytical thinking with the ability to interpret suspicious patterns, connect multiple data points and form evidence-based risk judgments.\n\n- Good understanding of process design, control logic, fraud risks and automation opportunities.\n\n- Experience contributing to cross-functional projects from analysis through implementation and impact measurement.\n\n- Strong ownership, analytical judgment and communication skills; comfortable working in a fast-paced environment with good command of English.\n\n- Strong SQL skills and experience working with large datasets; BigQuery experience is preferred.\n\n- Marketplace, e-commerce, or banking fraud experience is a plus."
+     }
+    ],
+    "hostedUrl": "https://jobs.lever.co/trendyol/13ea3eea-ac81-4242-b6c4-c70a5871bc4c"
+   }
+  },
+  {
+   "id": 11,
+   "company": "Trendyol",
+   "source": "lever",
+   "raw": {
+    "id": "e11c5931-6f4c-4086-b0ed-0b98c9abd2eb",
+    "text": "Operations Strategy and Business Intelligence Professionals",
+    "categories": {
+     "location": "Kocaeli / Çayırova",
+     "commitment": "Full-time",
+     "team": "Business Intelligence",
+     "department": "Operations",
+     "allLocations": [
+      "Kocaeli / Çayırova"
+     ]
+    },
+    "country": "TR",
+    "workplaceType": "hybrid",
+    "salaryRange": null,
+    "descriptionPlain": "About the Team\nAt Trendyol Operations, we optimize systems, enhance efficiency, and harness technology to deliver seamless e-commerce experiences. From robotics to automation, we leverage cutting-edge solutions to meet the needs of millions. We work cross-functionally with teams across the business, turning ambitious goals into reality through data, speed, and teamwork. In a culture that values ownership, impact, and inclusivity, we grow together — as individuals and as a team.\n\nAbout the Role\nYou will work across operations teams to drive strategic priorities, lead impactful projects, and improve processes through technology, benchmarking, and best practices. You will own strategic planning, including KPIs, targets, long-term modelling, and expansion plans, while contributing to the AI agenda by identifying and implementing high-value opportunities. You will lead operational projects, align stakeholders, track key metrics, and provide data-driven insights to support decision-making.",
+    "lists": [
+     {
+      "text": "Responsibilities",
+      "content": "- Wearing many hats: partnering with all operation departments on strategic topics and operational priorities,\n\n- Owning the strategic planning agenda of operations: from KPI setting and target revisions to long-term modelling and expansion plans\n\n- Identify opportunities to improve processes and strategies with technology solutions by benchmarking, and finding best practices,\n\n- Contributing to the AI agenda across operations: exploring where AI can add value and working with teams to bring these ideas to life,\n\n- Leading and/or supporting ops projects and new initiatives and managing the scope and requirements for all stakeholders,\n\n- Monitoring key performance metrics and executing project plans with teams to improve business processes and functions,\n\n- Designing comprehensive analyses and models to identify challenges and solutions with support on decision making across the company."
+     },
+     {
+      "text": "Expected Qualifications",
+      "content": "- University degree preferably in Engineering, Economics, Management,\n\n- 3 - 5 years of e-commerce, consulting or equivalent work experience preferred,\n\n- Strong experience in interpreting both quantitative and qualitative results of analyses, believing data is the most powerful tool for informed decision-making,\n\n- Highly analytical and comfortable with complex business problems and decision, creative problem solver who thrives with ambiguity,\n\n- Comfortable with the big picture as well as small details with a sense of analytical thinking, detail-orientation and eagerness to learn with agile mindset,\n\n- Passionate to working with multiple stakeholders and excellent communicator who can build relationships with a diverse set of stakeholders - numbers are key, but business can only be built with people,\n\n- Excellent command of gsheet/excel, good command of BI tools, curious about AI tools and how they can be applied to business problems,\n\n- Excellent written and spoken communication skills in English and Turkish,\n\n- Open to direct feedback culture, prone to constant learning, taking initiative and not avoiding responsibility, self-motivated, highly adaptable, and comfortable in a fast-changing and fluid environment"
+     }
+    ],
+    "hostedUrl": "https://jobs.lever.co/trendyol/e11c5931-6f4c-4086-b0ed-0b98c9abd2eb"
+   }
+  },
+  {
+   "id": 12,
+   "company": "Trendyol",
+   "source": "lever",
+   "raw": {
+    "id": "a82ac003-d49f-428d-94ec-d6096ae150f6",
+    "text": "Business Development / Category Management Graduates (Saudi Nationals Only)",
+    "categories": {
+     "location": "Riyadh",
+     "commitment": "Internship",
+     "team": "Internship",
+     "department": "Internship Programme",
+     "allLocations": [
+      "Riyadh"
+     ]
+    },
+    "country": "SA",
+    "workplaceType": "hybrid",
+    "salaryRange": null,
+    "descriptionPlain": "About the Team\nAt Trendyol Core Commerce, we build innovative, data-driven strategies that power sustainable growth and global expansion.\nFrom seller experience to new market launches, we turn insights into action—fast. Our cross-functional teams shape the future of commerce with bold ideas, real-time impact, and a deep sense of ownership. In a fast-paced, collaborative environment, we grow together — as individuals and as a team.\n\nAs a Business Development/Category Management Graduate, you’ll step into the dynamic world of e-commerce, supporting our seller partners and contributing to their success on our platform. This hands-on internship within the Category Teams gives you a unique chance to gain real-world experience in seller operations and performance management. You’ll apply your data-driven mindset and strong communication skills to onboard new sellers, expand their product selection, and analyze performance data to deliver valuable insights.",
+    "lists": [
+     {
+      "text": "Responsibilities",
+      "content": "- Immerse yourself in Trendyol’s culture and ways of working.\n\n- Support sellers with onboarding tasks, including order processing, reporting, and listing management.\n\n- Drive selection expansion by helping sellers complete listing templates.\n\n- Monitor daily sales and end-to-end supply chain operations (deliveries & returns).\n\n- Share weekly performance feedback with sellers to enhance operational excellence."
+     },
+     {
+      "text": "Expected Qualifications",
+      "content": "- Available to work full-time.\n\n- Recently graduated with a degree in Business, Management, Engineering, or a related field.\n\n- Advanced proficiency in English.\n\n- Strong analytical and data-driven mindset; skilled in Microsoft Excel with familiarity in basic data analytics (e.g., forecasting, dashboards).\n\n- Team player with high learning agility, results orientation, and strong data literacy.\n\n- Proactive, self-motivated, and able to turn ideas into action.\n\nNote: Due to national hiring requirements, we are only considering Saudi nationals for this graduate role."
+     }
+    ],
+    "hostedUrl": "https://jobs.lever.co/trendyol/a82ac003-d49f-428d-94ec-d6096ae150f6"
+   }
+  },
+  {
+   "id": 13,
+   "company": "Trendyol",
+   "source": "lever",
+   "raw": {
+    "id": "bf52bd92-b67c-49f9-9de0-e7ec0f27f270",
+    "text": "Marketplace Development Lead",
+    "categories": {
+     "location": "Bucharest",
+     "commitment": "Full-time",
+     "team": "Marketplace",
+     "department": "Core Commerce",
+     "allLocations": [
+      "Bucharest"
+     ]
+    },
+    "country": "RO",
+    "workplaceType": "hybrid",
+    "salaryRange": null,
+    "descriptionPlain": "About the Team\nAt Trendyol Core Commerce, we build innovative, data-driven strategies that power sustainable growth and global expansion.\nFrom seller experience to new market launches, we turn insights into action—fast. Our cross-functional teams shape the future of commerce with bold ideas, real-time impact, and a deep sense of ownership. In a fast-paced, collaborative environment, we grow together — as individuals and as a team.\n\nThe Romania Marketplace Development Lead will coordinate the outsourced seller-development operation responsible for driving the growth of small and medium-sized sellers on Trendyol. Operating as a hands-on individual contributor, the ideal candidate will connect local market intelligence, category priorities, and commercial goals with disciplined frontline execution. This role monitors partner performance standards, guides external agency teams, and translates marketplace benchmarking into scalable seller-growth initiatives. Highly commercial and data-driven, the Lead will exercise clear ownership over measurable seller and marketplace performance outcomes without direct internal line-management responsibilities.",
+    "lists": [
+     {
+      "text": "Responsibilities",
+      "content": "- Coordinate and guide the Romania E-commerce Consultancy outsourced team, setting clear objectives, productivity standards, quality expectations, and coaching routines.\n\n- Own seller segmentation and prioritization, focusing agency resources on small and medium-sized sellers with the highest growth potential.\n\n- Build and run performance-management cadences, using dashboards and root-cause evaluations to identify gaps and implement corrective actions.\n\n- Partner with Category and Commercial teams to translate business priorities into seller-level growth plans covering catalog selection, pricing, campaigns, and visibility.\n\n- Conduct regular local marketplace and competitor benchmarking, turning market insights into practical initiatives and commercial recommendations.\n\n- Develop scalable playbooks for seller activation, engagement, retention, and growth, balancing volume expansion with sustainable seller quality.\n\n- Represent the E-commerce Consultancy function in cross-functional forums, aligning stakeholders on priorities and providing data-backed updates on performance, risks, and opportunities."
+     },
+     {
+      "text": "Expected Qualifications",
+      "content": "- Bachelor’s degree in Business Administration, Economics, Marketing, Management, or a related field.\n\n- Experience in e-commerce, digital marketplace operations, commercial account management, or agency management.\n\n- Proven track record as a high-performing individual contributor with an ability to connect daily operational activity to GMV growth, seller quality, and marketplace expansion.\n\n- Demonstrated ability to coordinate, coach, and guide outsourced or remote account management teams without direct authority.\n\n- Analytical capability to interpret performance data, build tracking dashboards, and translate metrics into actionable growth plans.\n\n- Stakeholder management skills with the ability to communicate across Category, Commercial, Operations, and senior leadership teams.\n\n- Deep knowledge of the Romanian e-commerce market, local customer behaviors, and regional competitor dynamics.\n\n- Strong command of English and fluent Romanian, both written and spoken."
+     }
+    ],
+    "hostedUrl": "https://jobs.lever.co/trendyol/bf52bd92-b67c-49f9-9de0-e7ec0f27f270"
+   }
+  },
+  {
+   "id": 14,
+   "company": "Dream Games",
+   "source": "greenhouse",
+   "raw": {
+    "id": 4958794101,
+    "title": "AI Engineer, Performance Marketing",
+    "location": {
+     "name": "İstanbul"
+    },
+    "departments": [
+     "Marketing"
+    ],
+    "offices": [
+     "Istanbul"
+    ],
+    "content": "We are looking for a passionate AI Engineer to join our performance marketing team. As an AI Engineer, you will build generative AI pipelines and agentic systems for creative production: creative ideation, image and video generation, automated creative pipelines, and the tooling around them. You will prototype quickly against real creative problems and take what works into production. Prior marketing experience is not required, but a genuine creative eye for what makes an ad creative work is essential.\n\n&nbsp;\n\nAt Dream Games, all team members have a genuine chance to contribute to the final product and have an impact on the company. If you want to be a team member of a fast-growing company, you might be the person we are looking for!\n\nResponsibilities\n\n- Building and maintaining AI powered features and agentic workflows for creative production\n\n- Contributing to systems that generate ad creatives, including interactive playables, by combining code generation and multimodal asset generation\n\n- Working with creative strategists to turn their craft into repeatable, scaled workflows\n\n- Developing evaluation pipelines for creative output, including quality checks and human-in-the-loop review\n\nRequirements\n\n- Computer engineering (or similar) background with a genuine creative eye\n\n- Proficiency in Python and hands on experience building agentic workflows, LLM chains, and multimodal model calls\n\n- Experience with generative AI, such as diffusion models and image/video generation\n\n- Familiarity with modern AI application techniques such as RAG, function calling, and vector databases\n\n- Deep interest in state-of-the-art AI, following new models and capabilities closely\n\n- Passion and interest in games\n\n- Appreciation and understanding of teamwork\n\n&nbsp;\n\nProtecting your privacy and the security of your data is a top priority for Dream Games. We collect and process your personal data as confidential as part of the recruitment process. Please read our&nbsp; Statement of Personal Data Protection Law &nbsp;and&nbsp; Consent Letter &nbsp;to know more details.",
+    "absolute_url": "https://job-boards.eu.greenhouse.io/dreamgames/jobs/4958794101"
+   }
+  }
+ ]
+}
